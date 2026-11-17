@@ -247,6 +247,46 @@
     .lb-mid { margin-top: 26vh; }
   }
 
+  #fxwarn { position: absolute; top: 21%; left: 50%; transform: translateX(-50%); font-size: clamp(17px, 3.6vw, 30px); font-weight: 900; color: #fff; padding: 6px 18px; border-radius: 14px; background: linear-gradient(90deg, #7c3aed, #db2777); box-shadow: 0 0 24px rgba(219,39,119,0.6); z-index: 15; animation: spinPulse 0.35s infinite alternate; white-space: nowrap; pointer-events: none; }
+  #fxwarn.ice { background: linear-gradient(90deg, #0284c7, #38bdf8); box-shadow: 0 0 24px rgba(56,189,248,0.6); }
+  #fxwarn.nuke { background: linear-gradient(90deg, #b91c1c, #f59e0b); }
+  #item-slot .idesc { display: none; }
+
+  /* ---------- 태블릿(패드) 세로 화면 ---------- */
+  @media (orientation: portrait) and (min-width: 700px) {
+    #lobby { padding: 22px 26px 26px; }
+    .logo { font-size: 48px; } .logo small { font-size: 15px; }
+    .opts { gap: 10px; } .opt { padding: 7px 10px; border-radius: 14px; } .opt label { font-size: 13px; }
+    .seg button { font-size: 14.5px; padding: 8px 13px; border-radius: 10px; }
+    .lb-mid { flex-wrap: nowrap; align-items: flex-end; gap: 14px; }
+    #detail { width: 57%; padding: 16px 18px; } #detail .dname { font-size: 32px; } #detail .dtag { display: block; font-size: 14px; }
+    .stat { font-size: 13px; grid-template-columns: 46px 1fr; } .stat .sb { height: 10px; }
+    .abil { font-size: 13.5px; } .quote { display: block; font-size: 14px; }
+    .howto { display: block; width: 43%; font-size: 12.5px; padding: 12px 14px; max-height: 400px; overflow-y: auto; } .howto h4 { font-size: 15px; }
+    #cards { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .card { padding: 12px 8px 10px; border-radius: 16px; } .card .sw { height: 36px; } .card .cn { font-size: 15px; } .card .cr { font-size: 12px; }
+    #start { padding: 20px; font-size: 22px; border-radius: 20px; }
+    .net-bar { padding: 13px 16px; } .net-title { font-size: 15px; } .net-status { font-size: 13.5px; } .rchip { font-size: 13px; padding: 3px 10px; }
+    .net-btn { padding: 11px 18px; font-size: 14px; } #nick-input { width: 140px; font-size: 15px; padding: 10px 12px; } #net-code-input { width: 130px; font-size: 18px; padding: 10px 12px; }
+    .net-code-show { font-size: 36px; } .lp-head { font-size: 14.5px; }
+    #me-card { width: 370px; padding: 12px 16px; border-radius: 18px; } #me-card .row1 { font-size: 18px; } .bar { height: 17px; } #me-skill { font-size: 13px; } #me-skill .key { min-width: 32px; height: 32px; }
+    #center-top { min-width: 200px; padding: 9px 22px; border-radius: 18px; } #clock { font-size: 32px; } #alive { font-size: 14px; } #shrink-info { font-size: 13px; } .rk { font-size: 28px; }
+    #roster { display: block; width: 200px; padding: 8px 10px; } .rrow { font-size: 13.5px; padding: 4px 0; } .rrow .mini { display: block; }
+    #hud-btns { top: 128px; } #hud-btns button { width: 48px; height: 40px; font-size: 19px; border-radius: 12px; }
+    #feed { top: 180px; } .feed { font-size: 14.5px; }
+    #item-slot { top: 196px; left: 16px; width: 108px; height: 108px; border-radius: 24px; } #item-slot .ie { font-size: 50px; } #item-slot .in { font-size: 13px; }
+    #minimap { width: 240px; height: 240px; right: 16px; top: 270px; bottom: auto; }
+    #t-joy { width: 230px; height: 230px; left: 44px; bottom: 60px; } #t-knob { width: 96px; height: 96px; margin: -48px 0 0 -48px; }
+    #touch .act { width: 104px; height: 104px; font-size: 18px; }
+    #t-item { width: 136px !important; height: 136px !important; right: 44px; bottom: 64px; font-size: 46px !important; } #t-item small { font-size: 14px; }
+    #t-spin { right: 200px; bottom: 48px; font-size: 18px !important; }
+    #t-skill, #t-drift { right: 64px; bottom: 228px; }
+    #t-tip { font-size: 14px; bottom: 18px; }
+    #banner { font-size: 100px; } #toast { font-size: 19px; }
+    .mbox { width: min(580px, 100%); padding: 30px; } .mbox h2 { font-size: 42px; } .rtab { font-size: 15px; } .mbtns .btn { font-size: 16px; padding: 14px; }
+    .clabel { font-size: 13px; }
+  }
+
   /* ---------- 일시정지 / 결과 ---------- */
   .modal { position: absolute; inset: 0; z-index: 40; display: flex; align-items: center; justify-content: center; background: rgba(2,6,23,0.6); backdrop-filter: blur(8px); padding: 16px; }
   .mbox { width: min(440px, 100%); background: linear-gradient(180deg, #0f172a, #020617); border: 2px solid var(--gold); border-radius: 22px; padding: 22px; text-align: center; box-shadow: 0 30px 80px rgba(0,0,0,0.6); }
@@ -286,6 +326,7 @@
     <div id="item-slot"></div>
     <canvas id="minimap" width="180" height="180"></canvas>
     <div id="wrongway" class="hidden">⟲ 역주행!</div>
+    <div id="fxwarn" class="hidden"></div>
     <div id="hud-btns">
       <button id="b-cam" title="카메라 전환 (C)">🎥</button>
       <button id="b-snd" title="사운드">🔊</button>
@@ -328,7 +369,7 @@
         <b>W/↑</b> 가속 · <b>S/↓</b> 후진 · <b>A D</b> 조향 (모바일: 왼쪽 조이스틱)<br>
         배틀: 속도를 내며 크게 꺾으면 <b>자동 드리프트</b> → 스핀 게이지 충전 · <b>Space</b> 스핀 대시<br>
         레이스: <b>Shift</b> 드리프트로 <b>부스터</b> 충전 → <b>Space</b> 부스터<br>
-        <b>❓ 아이템 박스</b>를 먹고 <b>F</b>로 사용 (미사일·지뢰·바나나·버블·터보·거대화·번개·물폭탄·자석·실드)<br>
+        <b>❓ 아이템 박스</b>를 먹고 <b>F</b>로 사용 — 🕳️블랙홀 ☄️메테오 🔀위치강탈 🪞조작반전 🧊빙결 🎳볼링공 🚀로켓점프 🦘메가점프 ☢️핵폭탄 🌋대지진 👻유령도둑 🍄메가거대화<br>
         <b>E</b> 차량 고유 스킬(배틀) &nbsp;<b>C</b> 카메라 &nbsp;<b>P</b> 일시정지<br>
         <h4 style="margin-top:6px">🏁 카트 레이스</h4>
         맵 3개 · 3바퀴 · 1~8위 순위 결정. 1위가 들어오면 25초 뒤 종료!<br>
@@ -1374,7 +1415,11 @@ function createCar(id, isPlayer, idx, tag = '') {
   const bubble = new THREE.Mesh(new THREE.SphereGeometry(def.radius * 1.3, 24, 16), new THREE.MeshStandardMaterial({ color: 0x67e8f9, emissive: 0x22d3ee, emissiveIntensity: 0.5, transparent: true, opacity: 0.32, depthWrite: false, roughness: 0.1, metalness: 0.2 }));
   bubble.position.y = 0.8; bubble.visible = false;
   model.root.add(bubble);
+  const ice = new THREE.Mesh(new THREE.BoxGeometry(def.radius * 2.3, 1.9, def.radius * 2.9), new THREE.MeshStandardMaterial({ color: 0xbae6fd, emissive: 0x38bdf8, emissiveIntensity: 0.35, transparent: true, opacity: 0.55, roughness: 0.05, metalness: 0.1, depthWrite: false }));
+  ice.position.y = 0.9; ice.visible = false;
+  model.root.add(ice);
   return {
+    ice, mirrorT: 0, freezeT: 0, rocketT: 0, rocketMax: 1, ghostT: 0, flatT: 0, slamPending: false, steerSm: 0,
     bubble, item: null, roulette: 0, boostT: 0, shieldT: 0, giantT: 0, slowT: 0, spinoutT: 0, trapT: 0, magnetT: 0, magTarget: null,
     lap: 0, tIdx: 0, place: 0, finished: false, finishT: 0, dnf: false, wrongWay: false, rubber: 1, nick: '',
     id, def, isPlayer, idx, tag, human: isPlayer, remote: null, slot: 0, model, label, hpEl: label.querySelector('.hpb i'), spEl: label.querySelector('.spb i'),
@@ -1490,6 +1535,7 @@ function sampleControls() {
   if (touch.jOn) {
     const m = Math.hypot(touch.jx, touch.jy);
     steer = Math.abs(touch.jx) < 0.12 ? 0 : clamp(touch.jx * 1.25, -1, 1);
+    if (G.mode === 'RACE') steer = Math.sign(steer) * Math.abs(steer) ** 1.6; // 레이스: 가운데 근처는 미세 조향
     thr = touch.jy > 0.5 ? -1 : m > 0.2 ? 1 : 0;
   }
   if (kUp || kDn || kL || kR) {
@@ -1533,9 +1579,10 @@ function readPlayerInput() {
   // 조이스틱
   const joy = $('t-joy'), knob = $('t-knob');
   let jid = null;
-  const R = 56;
+  let R = 56;
   const setK = (t) => {
     const r = joy.getBoundingClientRect();
+    R = r.width * 0.37;
     let dx = t.clientX - (r.left + r.width / 2), dy = t.clientY - (r.top + r.height / 2);
     const d = Math.hypot(dx, dy);
     if (d > R) { dx = dx / d * R; dy = dy / d * R; }
@@ -1579,7 +1626,7 @@ function massEff(c) {
   if (isTornado(c)) m *= 4;
   if (c.dashT > 0) m *= 1.5;
   if (isRocket(c)) m *= 2;
-  if (c.giantT > 0) m *= 2.2;
+  if (c.giantT > 0) m *= 4;
   return m;
 }
 // a가 법선 방향(nx,nz)으로 상대를 밀어내는 힘 배율
@@ -1592,10 +1639,10 @@ function pushPower(c, nx, nz) {
   if (isShell(c)) p *= 1.8;
   if (isRocket(c)) p *= 2.3;
   if (isTornado(c)) p *= 1.6;
-  if (c.giantT > 0) p *= 1.5;
+  if (c.giantT > 0) p *= 2.2;
   return p;
 }
-const knockResist = (c) => (c.id === 'GOLIATH' ? 0.8 : 1) * (c.shieldT > 0 && G.mode === 'BATTLE' ? 0.3 : 1);
+const knockResist = (c) => (c.id === 'GOLIATH' ? 0.8 : 1) * (c.freezeT > 0 ? 1.6 : 1) * (c.shieldT > 0 && G.mode === 'BATTLE' ? 0.3 : 1);
 const dmgTakenMul = (c) => (c.id === 'TITAN' ? 0.65 : 1) * (isShield(c) ? 0.2 : 1) * (c.shieldT > 0 ? 0.25 : 1);
 
 // 이 기기 화면에서만 보여줄 연출 (온라인 중계 제외)
@@ -1741,7 +1788,7 @@ function stepCar(c, dt) {
   c.stunT = Math.max(0, c.stunT - dt);
   c.boostCd = Math.max(0, c.boostCd - dt);
   c.hitFlash = Math.max(0, c.hitFlash - dt);
-  for (const k of ['boostT', 'shieldT', 'giantT', 'slowT', 'spinoutT', 'trapT', 'magnetT']) if (c[k] > 0) c[k] = Math.max(0, c[k] - dt);
+  for (const k of ['boostT', 'shieldT', 'giantT', 'slowT', 'spinoutT', 'trapT', 'magnetT', 'mirrorT', 'freezeT', 'rocketT', 'ghostT', 'flatT']) if (c[k] > 0) c[k] = Math.max(0, c[k] - dt);
   if (c.roulette > 0) { c.roulette -= dt; if (c.roulette <= 0) { c.roulette = 0; c.item = rollItem(c); if (c.isPlayer) local(() => SFX.play('select')); } }
   const race = G.mode === 'RACE';
   updateSkill(c, dt);
@@ -1749,7 +1796,7 @@ function stepCar(c, dt) {
   const inp = c.input;
   const locked = c.stunT > 0 || isAnchored(c) || isTornado(c) || isShell(c) || isIgnite(c) || G.phase !== 'PLAY';
   const thr = locked ? 0 : inp.thr;
-  const steer = c.stunT > 0 || isTornado(c) || isShell(c) || G.phase !== 'PLAY' ? 0 : inp.steer;
+  const steer = c.stunT > 0 || isTornado(c) || isShell(c) || G.phase !== 'PLAY' ? 0 : inp.steer * (c.mirrorT > 0 ? -1 : 1);
 
   let fx = Math.sin(c.h), fz = Math.cos(c.h);
   const vF = c.vx * fx + c.vz * fz;
@@ -1767,19 +1814,21 @@ function stepCar(c, dt) {
   // 조향 (속도 비례, 후진 시 반대)
   c.drifting = !locked && inp.drift && Math.abs(vF) > 4 && grounded;
   const steerFactor = clamp(Math.abs(vF) / 5, 0.6, 1);
-  let turn = d.turn * (c.drifting ? 0.95 : 1) * (c.dashT > 0 ? 0.55 : 1) * (isRocket(c) ? 0.12 : 1) * (isNitro(c) ? 0.6 : 1);
-  c.h -= steer * turn * steerFactor * (vF >= -0.5 ? 1 : -1) * dt;
+  let turn = d.turn * (race ? (c.drifting ? 0.8 : 0.6) : 1) * (c.drifting ? 0.95 : 1) * (c.dashT > 0 ? 0.55 : 1) * (isRocket(c) ? 0.12 : 1) * (isNitro(c) ? 0.6 : 1);
+  // 레이스: 조향 입력을 부드럽게 (급격한 방향 전환 방지)
+  const stE = race ? (c.steerSm = lerp(c.steerSm, steer, Math.min(1, dt * 6))) : steer;
+  c.h -= stE * turn * steerFactor * (vF >= -0.5 ? 1 : -1) * dt;
   c.steerVis = lerp(c.steerVis, steer, Math.min(1, dt * 10));
   fx = Math.sin(c.h); fz = Math.cos(c.h);
   const rx = -fz, rz = fx;
 
   // 횡방향 마찰 (그립) — 드리프트·피격 슬라이드 시 크게 감소
-  const grip = d.grip * th.grip * (c.drifting ? 0.55 : 1) * (c.slideT > 0 ? 0.1 : 1) * (c.dashT > 0 || isRocket(c) ? 1.5 : 1) * (grounded ? 1 : 0.05);
+  const grip = d.grip * th.grip * (c.drifting ? 0.55 : 1) * (c.slideT > 0 ? 0.1 : 1) * (c.dashT > 0 || isRocket(c) ? 1.5 : 1) * (grounded ? 1 : 0.05) * (c.freezeT > 0 ? 0.03 : 1);
   const vR = c.vx * rx + c.vz * rz;
   const lat = vR * (1 - Math.exp(-grip * dt));
   c.vx -= rx * lat; c.vz -= rz * lat;
   // 공기·노면 저항 (튕겨나갈 때는 더 큰 저항으로 비행 거리 제한)
-  const drag = Math.exp(-(c.slideT > 0 ? 2.4 : 0.42 * th.grip ** 0.3) * dt);
+  const drag = Math.exp(-(c.freezeT > 0 ? 0.12 : c.slideT > 0 ? 2.4 : 0.42 * th.grip ** 0.3) * dt);
   c.vx *= drag; c.vz *= drag;
   // 후진 속도 제한 (최고 속도의 45%)
   const vBack = c.vx * fx + c.vz * fz;
@@ -1821,7 +1870,18 @@ function stepCar(c, dt) {
       if (dd > radiusOf(c) + radiusOf(t) + 1) { c.vx += dx / dd * 60 * dt; c.vz += dz / dd * 60 * dt; }
     } else { c.vx += fx * 40 * dt; c.vz += fz * 40 * dt; }
   }
-  if (c.trapT > 0) { c.vx *= Math.exp(-10 * dt); c.vz *= Math.exp(-10 * dt); }
+  // 대지진: 경기장이 기울어 모두 한쪽으로 미끄러진다
+  const q = G.quake;
+  if (q && q.t > 0 && c !== q.owner && grounded && !race && c.ghostT <= 0) { c.vx += Math.sin(q.a) * 22 * dt; c.vz += Math.cos(q.a) * 22 * dt; }
+  // 로켓 점프: 트랙을 따라 하늘을 난다
+  if (c.rocketT > 0 && race) {
+    const T = TRACK, j = (c.tIdx + Math.round(18 / T.spacing)) % T.N;
+    const dx = T.px[j] - c.x, dz = T.pz[j] - c.z, l = Math.hypot(dx, dz) || 1;
+    c.h = lerpAngle(c.h, Math.atan2(dx, dz), Math.min(1, dt * 8));
+    c.vx = dx / l * 66; c.vz = dz / l * 66;
+    c.y = Math.sin((1 - c.rocketT / c.rocketMax) * Math.PI) * 7.5; c.vy = 0;
+    if (Math.random() < dt * 40) emitSmoke(c.x - fx * 1.5, c.y + 0.4, c.z - fz * 1.5, 0xfed7aa, 1.2, 0.7, 0.6, 0.5, 0.4);
+  }
 
   if (c.dashT > 0) {
     c.dashT -= dt;
@@ -1890,6 +1950,7 @@ function stepCar(c, dt) {
 
 function onLand(c) {
   c.airborne = false;
+  if (c.slamPending) { slamLand(c); return; }
   if (c.id === 'GOLIATH' && c.skillT > 0) {
     c.skillT = 0;
     if (Math.hypot(c.x, c.z) > G.arenaR + 0.15) return; // 밖에 착지하면 그냥 낙하
@@ -1961,10 +2022,10 @@ function collideCars() {
   const cars = G.cars;
   for (let i = 0; i < cars.length; i++) {
     const a = cars[i];
-    if (!a.alive || a.falling || isGhost(a)) continue;
+    if (!a.alive || a.falling || isGhost(a) || a.ghostT > 0) continue;
     for (let j = i + 1; j < cars.length; j++) {
       const b = cars[j];
-      if (!b.alive || b.falling || isGhost(b)) continue;
+      if (!b.alive || b.falling || isGhost(b) || b.ghostT > 0) continue;
       if (Math.abs(a.y - b.y) > 0.9) continue;
       const dx = b.x - a.x, dz = b.z - a.z;
       const d = Math.hypot(dx, dz), rs = radiusOf(a) + radiusOf(b);
@@ -2020,6 +2081,9 @@ function collideCars() {
       else if (b.dashT > 0 && toA > 14) { a.stunT = Math.max(a.stunT, 0.35); b.dashT = Math.min(b.dashT, 0.1); }
       applyDamage(b, dmgB, a);
       applyDamage(a, dmgA, b);
+      // 메가 거대화: 작은 차를 납작하게 깔아뭉갠다
+      if (a.giantT > 0 && b.giantT <= 0 && b.flatT <= 0 && !itemImmune(b)) { b.flatT = 1.8; if (G.mode === 'RACE') spinout(b, 1.2); else applyDamage(b, 8 * dmgTakenMul(b), a); popupAt(b.x, 2, b.z, '납작!', '#bef264', 'big'); }
+      if (b.giantT > 0 && a.giantT <= 0 && a.flatT <= 0 && !itemImmune(a)) { a.flatT = 1.8; if (G.mode === 'RACE') spinout(a, 1.2); else applyDamage(a, 8 * dmgTakenMul(a), b); popupAt(a.x, 2, a.z, '납작!', '#bef264', 'big'); }
       // 연출
       const px = a.x + nx * a.def.radius, pz = a.z + nz * a.def.radius;
       const k = Math.max(toA, toB) / 32;
@@ -2223,6 +2287,14 @@ function updateAI(c, dt) {
     const ar = Math.hypot(ax, az);
     if (ar > R - 1.5) { ax *= (R - 1.5) / ar; az *= (R - 1.5) / ar; }
   }
+  // 핵폭탄·블랙홀에서 도망
+  for (const pj of G.proj) {
+    const dd = Math.hypot(pj.x - c.x, pj.z - c.z);
+    if ((pj.type === 'NUKE' && dd < 19) || (pj.type === 'HOLE' && pj.owner !== c && dd < 24)) {
+      if (!danger) { const dl = dd || 1; ax = c.x + (c.x - pj.x) / dl * 12; az = c.z + (c.z - pj.z) / dl * 12; const ar = Math.hypot(ax, az); if (ar > R - 3) { ax *= (R - 3) / ar; az *= (R - 3) / ar; } }
+      break;
+    }
+  }
   const want = Math.atan2(ax - c.x, az - c.z) + (danger ? 0 : ai.noise);
   const diff = wrapAngle(want - c.h);
   inp.steer = clamp(-diff * 2.6, -1, 1);
@@ -2233,6 +2305,7 @@ function updateAI(c, dt) {
   // 플레이어와 같은 규칙: 확실히 꺾을 때(=좌/우 버튼)만 드리프트
   if (Math.abs(inp.steer) < 0.25) inp.steer = 0;
   inp.drift = Math.abs(inp.steer) > 0.35 && speed > 6;
+  if (c.mirrorT > 0 && c.mirrorT < 2.8) inp.steer = -inp.steer; // 조작 반전에 1초쯤 뒤 적응
 
   if (!canAct(c) || G.phase !== 'PLAY') return;
   aiBattleItems(c, dt);
@@ -2384,14 +2457,19 @@ function updateCarVisual(c, dt) {
   if (!c.alive) { m.root.visible = false; return; }
   const hover = m.extra.hover ? 0.38 + Math.sin(performance.now() * 0.004 + c.idx) * 0.07 : 0;
   m.root.position.set(c.x, c.y + hover, c.z);
-  const sc = c.giantT > 0 ? 1.35 : (c.slowT > 0 && G.mode === 'RACE' ? 0.85 : 1);
-  m.root.scale.setScalar(lerp(m.root.scale.x, sc, Math.min(1, dt * 8)));
-  c.bubble.visible = c.shieldT > 0 || c.trapT > 0;
+  const sc = c.giantT > 0 ? 2 : 1;
+  const sxz = lerp(m.root.scale.x, sc, Math.min(1, dt * 8));
+  const sy = lerp(m.root.scale.y, sc * (c.flatT > 0 ? 0.3 : 1), Math.min(1, dt * (c.flatT > 0 ? 25 : 6)));
+  m.root.scale.set(sxz, sy, sxz);
+  c.bubble.visible = c.mirrorT > 0;
   if (c.bubble.visible) {
-    c.bubble.material.color.setHex(c.trapT > 0 ? 0x3b82f6 : 0x67e8f9);
-    c.bubble.material.opacity = 0.28 + Math.sin(performance.now() * 0.01) * 0.06 + (c.shieldT > 0 && c.shieldT < 1 && Math.sin(performance.now() * 0.03) > 0 ? -0.2 : 0);
-    c.bubble.rotation.y += dt * 1.5;
+    c.bubble.material.color.setHex(0xd946ef); c.bubble.material.emissive.setHex(0xa21caf);
+    c.bubble.material.opacity = 0.22 + Math.sin(performance.now() * 0.012) * 0.1;
+    c.bubble.rotation.y += dt * 5; c.bubble.rotation.x += dt * 3;
   }
+  c.ice.visible = c.freezeT > 0;
+  if (c.freezeT > 0 && Math.random() < dt * 6) emitSparks(c.x, 1.6, c.z, 0xe0f2fe, 1, 3, 0.4);
+  if (c.ghostT > 0 && Math.random() < dt * 10) emitSmoke(c.x, 0.8, c.z, 0xe2e8f0, 0.8, 0.5, 0.8, 0.3, 0.5);
   if (c.slowT > 0 && Math.random() < dt * 8) emitSparks(c.x, 1.4, c.z, 0xfef08a, 1, 4, 0.2);
   // 스핀 회전 (대시 · 토네이도 · 셸 스핀 · 스핀아웃)
   if (c.spinoutT > 0) c.spinVis += dt * 16;
@@ -2437,7 +2515,7 @@ function updateCarVisual(c, dt) {
   m.paint.emissive.setHex(c.hitFlash > 0 ? 0xffffff : 0x000000);
   m.paint.emissiveIntensity = c.hitFlash > 0 ? 0.9 : 0;
   // 불꽃
-  const showFlame = isNitro(c) || isRocket(c) || isIgnite(c) || (c.dashT > 0 && (c.id === 'COMET' || G.mode === 'RACE')) || c.boostT > 0;
+  const showFlame = isNitro(c) || isRocket(c) || isIgnite(c) || (c.dashT > 0 && (c.id === 'COMET' || G.mode === 'RACE')) || c.boostT > 0 || c.rocketT > 0;
   for (const f of m.flames) {
     f.visible = showFlame;
     if (showFlame) { const s = isIgnite(c) ? 0.5 + Math.random() * 0.3 : 1 + Math.random() * 0.4; f.scale.set(s, s, s); }
@@ -2445,7 +2523,7 @@ function updateCarVisual(c, dt) {
   // 스킬 비주얼
   if (m.extra.shield) { m.extra.shield.visible = isShield(c); if (isShield(c)) { m.extra.shield.rotation.y += dt * 2; m.extra.shield.rotation.x += dt; } }
   if (m.extra.claws) m.extra.claws.forEach((cl) => { cl.visible = isAnchored(c); });
-  const ghost = isGhost(c);
+  const ghost = isGhost(c) || c.ghostT > 0;
   if (m._ghost !== ghost) {
     m._ghost = ghost;
     m.mats.forEach((mt) => { mt.transparent = ghost; mt.opacity = ghost ? 0.3 : 1; mt.needsUpdate = true; });
@@ -2470,7 +2548,7 @@ function toggleCam() { G.camMode = G.camMode === 'CHASE' ? 'ARENA' : 'CHASE'; to
 function updateCamera(dt) {
   const w = window.innerWidth, h = window.innerHeight;
   const portrait = h > w;
-  let tp, tl, fov = portrait ? 68 : 55;
+  let tp, tl, fov = portrait ? (w / h > 0.62 ? 60 : 68) : 55;
   if (G.phase === 'LOBBY') {
     const t = performance.now() * 0.00035;
     tp = new THREE.Vector3(Math.sin(t) * 9.5, 3.6, Math.cos(t) * 9.5);
@@ -2505,6 +2583,7 @@ function updateCamera(dt) {
     camLook.lerp(tl, Math.min(1, dt * 8));
   }
   camera.position.copy(camPos);
+  if (G.quake && G.phase !== 'LOBBY') G.shake = Math.max(G.shake, 0.45);
   if (G.shake > 0) {
     camera.position.x += (Math.random() - 0.5) * G.shake;
     camera.position.y += (Math.random() - 0.5) * G.shake * 0.7;
@@ -2610,6 +2689,7 @@ function updateHUD(dt) {
   const gN = G.mode === 'RACE' ? 'BOOST' : 'SPIN';
   $('me-spin-t').textContent = p.spin >= 99 ? `${gN} MAX — ${IS_TOUCH ? '버튼!' : 'SPACE!'}` : p.spin >= 35 ? `${gN} ${Math.floor(p.spin)}% · ${G.mode === 'RACE' ? '부스터' : '대시'} 가능` : `${gN} ${Math.floor(p.spin)}%`;
   updateItemHUD(dt);
+  updateFxWarn();
   if (G.mode === 'RACE') {
     updateRaceHUD(); drawMinimap(dt);
     hudAcc += dt;
@@ -2844,6 +2924,7 @@ function toLobby() {
   resetArena();
   G.arenaR = BAND_R[4];
   sun.position.set(22, 46, 18); sun.target.position.set(0, 0, 0);
+  renderer.domElement.style.filter = ''; $('fxwarn').classList.add('hidden');
   $('hud').classList.remove('race');
   ['hud', 'result', 'pause', 'spectate', 'touch'].forEach((id) => $(id).classList.add('hidden'));
   $('banner').classList.remove('show');
@@ -2881,16 +2962,26 @@ $('b-snd').addEventListener('click', (e) => { SFX.init(); SFX.setEnabled(!SFX.en
    22. 아이템 · 안전 펜스 · 레이스 모드
    ===================================================================== */
 const ITEMS = {
-  MISSILE: { e: '🚀', n: '미사일' }, MINE: { e: '💣', n: '지뢰' }, BANANA: { e: '🍌', n: '바나나' },
-  BUBBLE: { e: '🫧', n: '버블 실드' }, TURBO: { e: '💨', n: '터보' }, GIANT: { e: '🍄', n: '거대화' },
-  BOLT: { e: '⚡', n: '번개' }, WATER: { e: '💧', n: '물폭탄' }, MAGNET: { e: '🧲', n: '자석' }, SHIELD: { e: '🛡️', n: '실드' }
+  BLACKHOLE: { e: '🕳️', n: '블랙홀', d: '모든 차를 빨아들였다가 폭발!' },
+  METEOR: { e: '☄️', n: '메테오 샤워', d: '상대 머리 위로 운석 9개 낙하' },
+  SWAP: { e: '🔀', n: '위치 강탈', d: '상대와 자리를 순간이동 교환' },
+  MIRROR: { e: '🪞', n: '조작 반전', d: '상대 전원 좌우 조작 반전' },
+  FREEZE: { e: '🧊', n: '절대 빙결', d: '얼음 덩어리가 되어 미끄러짐' },
+  BOWLING: { e: '🎳', n: '거대 볼링공', d: '모두 쓸어버리는 초대형 공' },
+  ROCKET: { e: '🚀', n: '로켓 점프', d: '하늘을 날아 트랙을 건너뜀' },
+  SLAM: { e: '🦘', n: '메가 점프', d: '높이 날아올라 착지 충격파' },
+  NUKE: { e: '☢️', n: '핵폭탄', d: '3초 뒤 초대형 폭발 — 도망쳐!' },
+  QUAKE: { e: '🌋', n: '대지진', d: '경기장이 기울어 모두 미끄러짐' },
+  GHOST: { e: '👻', n: '유령 도둑', d: '투명·무적 + 앞차 아이템 강탈' },
+  MEGA: { e: '🍄', n: '메가 거대화', d: '2배 크기로 깔아뭉개기' }
 };
 const ITEM_IDS = Object.keys(ITEMS);
-const BATTLE_POOL = [['MISSILE', 3], ['MINE', 2], ['BANANA', 2], ['BUBBLE', 2], ['TURBO', 2], ['GIANT', 2], ['BOLT', 1]];
-function racePool(f) { // f: 0 = 선두, 1 = 꼴찌 — 뒤처질수록 좋은 아이템
-  if (f < 0.2) return [['BANANA', 4], ['SHIELD', 3], ['WATER', 2], ['TURBO', 1]];
-  if (f < 0.6) return [['MISSILE', 3], ['BANANA', 2], ['WATER', 2], ['TURBO', 3], ['SHIELD', 1], ['MAGNET', 1]];
-  return [['TURBO', 3], ['MISSILE', 3], ['MAGNET', 3], ['BOLT', 1], ['WATER', 1]];
+const BATTLE_POOL = [['BLACKHOLE', 2], ['METEOR', 2], ['SWAP', 1], ['MIRROR', 2], ['FREEZE', 2], ['BOWLING', 2], ['SLAM', 2], ['NUKE', 1], ['QUAKE', 1], ['MEGA', 2]];
+const RACE_ITEMS = ['BLACKHOLE', 'METEOR', 'SWAP', 'MIRROR', 'FREEZE', 'BOWLING', 'ROCKET', 'GHOST', 'MEGA'];
+function racePool(f) { // f: 0 = 선두, 1 = 꼴찌 — 뒤처질수록 판을 뒤집는 아이템
+  if (f < 0.2) return [['BOWLING', 3], ['MIRROR', 3], ['GHOST', 2], ['MEGA', 2], ['METEOR', 1]];
+  if (f < 0.6) return [['BOWLING', 2], ['METEOR', 2], ['FREEZE', 2], ['BLACKHOLE', 2], ['MIRROR', 2], ['ROCKET', 1], ['GHOST', 1], ['MEGA', 1]];
+  return [['ROCKET', 3], ['SWAP', 3], ['BLACKHOLE', 2], ['FREEZE', 2], ['METEOR', 1]];
 }
 function pickWeighted(pool) {
   let r = Math.random() * pool.reduce((a, b) => a + b[1], 0);
@@ -2901,7 +2992,7 @@ function rollItem(c) {
   if (G.mode === 'RACE') { const n = G.cars.length; return pickWeighted(racePool(n > 1 ? (raceRankOf(c) - 1) / (n - 1) : 0)); }
   return pickWeighted(BATTLE_POOL);
 }
-const radiusOf = (c) => c.def.radius * (c.giantT > 0 ? 1.35 : 1) * (c.slowT > 0 && G.mode === 'RACE' ? 0.85 : 1);
+const radiusOf = (c) => c.def.radius * (c.giantT > 0 ? 2 : 1);
 
 /* ---------- 아이템 박스 ---------- */
 const boxGeo = new THREE.BoxGeometry(1.4, 1.4, 1.4);
@@ -2932,6 +3023,7 @@ function setupBoxes() {
     for (let i = 0; i < 5; i++) { const a = i / 5 * TAU + 0.3; addBox(Math.sin(a) * 6.5, Math.cos(a) * 6.5); }
     for (let i = 0; i < 8; i++) { const a = i / 8 * TAU; addBox(Math.sin(a) * 17, Math.cos(a) * 17); }
     for (let i = 0; i < 8; i++) { const a = i / 8 * TAU + 0.4; addBox(Math.sin(a) * 28, Math.cos(a) * 28); }
+    G.boxes.forEach((b) => { b.active = false; b.t = 4; }); // 시작 4초 뒤 등장
   }
 }
 function boxUsable(b) { return G.mode === 'RACE' || Math.hypot(b.x, b.z) < G.arenaR - 1; }
@@ -2948,7 +3040,7 @@ function updateBoxes(dt, host) {
     for (const c of G.cars) {
       if (!c.alive || c.falling || c.y > 1.5) continue;
       if (Math.hypot(c.x - b.x, c.z - b.z) < radiusOf(c) + 0.85) {
-        b.active = false; b.t = G.mode === 'RACE' ? 3.2 : 9;
+        b.active = false; b.t = G.mode === 'RACE' ? 3.2 : 11;
         emitSparks(b.x, 1.2, b.z, 0xfacc15, 14, 8);
         emitRing(b.x, 0.3, b.z, 0xf472b6, 2.4, 0.35);
         if (!c.item && c.roulette <= 0) { c.roulette = 0.9; snd('orb', c, true); }
@@ -2958,50 +3050,78 @@ function updateBoxes(dt, host) {
   }
 }
 
-/* ---------- 투사체 / 함정 ---------- */
-const PJ_TYPES = ['MISSILE', 'BANANA', 'MINE', 'WATER'];
+/* ---------- 아이템 오브젝트 (블랙홀 · 운석 · 볼링공 · 핵폭탄) ---------- */
+const PJ_TYPES = ['HOLE', 'METEOR', 'BALL', 'NUKE'];
+const addMat = (col, op) => new THREE.MeshBasicMaterial({ color: col, transparent: true, opacity: op, blending: THREE.AdditiveBlending, depthWrite: false, side: THREE.DoubleSide });
+let _bowlTex = null;
+function bowlTex() {
+  if (_bowlTex) return _bowlTex;
+  _bowlTex = canvasTex(256, 128, (g, w, h) => {
+    const gr = g.createLinearGradient(0, 0, w, h); gr.addColorStop(0, '#7c3aed'); gr.addColorStop(0.5, '#db2777'); gr.addColorStop(1, '#4c1d95');
+    g.fillStyle = gr; g.fillRect(0, 0, w, h);
+    for (let i = 0; i < 40; i++) { g.strokeStyle = `rgba(255,255,255,${Math.random() * 0.25})`; g.lineWidth = 3; g.beginPath(); g.arc(Math.random() * w, Math.random() * h, 10 + Math.random() * 40, 0, 2); g.stroke(); }
+    g.fillStyle = '#0b0b12'; [[60, 50, 13], [92, 42, 13], [80, 76, 15]].forEach(([x, y, r]) => { g.beginPath(); g.arc(x, y, r, 0, TAU); g.fill(); });
+    g.fillStyle = '#fde047'; g.font = '900 34px sans-serif'; g.fillText('★', 180, 80);
+  });
+  return _bowlTex;
+}
+function groundRing(r0, r1, col, op) {
+  const m = new THREE.Mesh(new THREE.RingGeometry(r0, r1, 48), addMat(col, op));
+  m.rotation.x = -Math.PI / 2;
+  return m;
+}
 function makeProjMesh(type) {
   const g = new THREE.Group();
-  if (type === 'MISSILE') {
-    const body = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.22, 1.1, 10), new THREE.MeshStandardMaterial({ color: 0xe5e7eb, metalness: 0.7, roughness: 0.3 }));
-    body.rotation.x = Math.PI / 2;
-    const nose = new THREE.Mesh(new THREE.ConeGeometry(0.22, 0.5, 10), new THREE.MeshStandardMaterial({ color: 0xef4444, emissive: 0xef4444, emissiveIntensity: 0.6 }));
-    nose.rotation.x = Math.PI / 2; nose.position.z = 0.8;
-    const fl = new THREE.Mesh(new THREE.ConeGeometry(0.2, 0.9, 8), new THREE.MeshBasicMaterial({ color: 0xffa94d, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, depthWrite: false }));
-    fl.rotation.x = -Math.PI / 2; fl.position.z = -0.95;
-    g.add(body, nose, fl); g.userData.flame = fl;
-  } else if (type === 'BANANA') {
-    const m = new THREE.Mesh(new THREE.TorusGeometry(0.45, 0.16, 8, 16, Math.PI * 1.1), new THREE.MeshStandardMaterial({ color: 0xfde047, emissive: 0x854d0e, emissiveIntensity: 0.2, roughness: 0.5 }));
-    m.rotation.x = Math.PI / 2; m.position.y = -0.7;
-    g.add(m);
-  } else if (type === 'MINE') {
-    const m = new THREE.Mesh(new THREE.SphereGeometry(0.55, 14, 10), new THREE.MeshStandardMaterial({ color: 0x1f2937, metalness: 0.7, roughness: 0.3 }));
-    m.position.y = -0.6;
-    for (let i = 0; i < 6; i++) { const sp = new THREE.Mesh(new THREE.ConeGeometry(0.1, 0.35, 6), m.material); const a = i / 6 * TAU; sp.position.set(Math.sin(a) * 0.55, 0, Math.cos(a) * 0.55); sp.rotation.set(Math.PI / 2, 0, -a); sp.rotation.order = 'YXZ'; m.add(sp); }
-    const led = new THREE.Mesh(new THREE.SphereGeometry(0.14, 8, 6), new THREE.MeshBasicMaterial({ color: 0xff2d55 }));
-    led.position.y = -0.05; g.add(m, led); g.userData.led = led;
+  if (type === 'HOLE') {
+    const core = new THREE.Mesh(new THREE.SphereGeometry(1.5, 24, 16), new THREE.MeshBasicMaterial({ color: 0x000000 }));
+    core.position.y = 2;
+    const d1 = new THREE.Mesh(new THREE.TorusGeometry(3, 0.55, 8, 48), addMat(0xa855f7, 0.85));
+    const d2 = new THREE.Mesh(new THREE.TorusGeometry(4.4, 0.3, 8, 48), addMat(0xf97316, 0.7));
+    const d3 = new THREE.Mesh(new THREE.TorusGeometry(2.1, 0.25, 8, 40), addMat(0xffffff, 0.9));
+    [d1, d2, d3].forEach((d) => { d.rotation.x = Math.PI / 2 + 0.25; d.position.y = 2; });
+    const glow = new THREE.Sprite(new THREE.SpriteMaterial({ map: softDot, color: 0x6d28d9, transparent: true, opacity: 0.45, depthWrite: false, blending: THREE.AdditiveBlending }));
+    glow.scale.setScalar(8); glow.position.y = 2;
+    const pull = groundRing(6, 20, 0x7c3aed, 0.18); pull.position.y = 0.08;
+    g.add(glow, core, d1, d2, d3, pull);
+    Object.assign(g.userData, { d1, d2, d3, pull, core });
+  } else if (type === 'METEOR') {
+    const rock = new THREE.Mesh(new THREE.IcosahedronGeometry(1.3, 0), new THREE.MeshStandardMaterial({ color: 0x7c2d12, emissive: 0xf97316, emissiveIntensity: 1.2, roughness: 0.8, flatShading: true }));
+    const fire = new THREE.Mesh(new THREE.ConeGeometry(1.2, 6, 10, 1, true), addMat(0xfb923c, 0.75));
+    fire.position.y = 3.6;
+    const halo = new THREE.Sprite(new THREE.SpriteMaterial({ map: softDot, color: 0xfde047, transparent: true, opacity: 0.9, depthWrite: false, blending: THREE.AdditiveBlending }));
+    halo.scale.setScalar(5);
+    const warn = groundRing(3.6, 4.8, 0xff1f3d, 0.7);
+    const dot = new THREE.Mesh(new THREE.CircleGeometry(4.8, 40), addMat(0xff1f3d, 0.18)); dot.rotation.x = -Math.PI / 2;
+    g.add(rock, fire, halo, warn, dot);
+    Object.assign(g.userData, { rock, fire, halo, warn, dot });
+  } else if (type === 'BALL') {
+    const ball = new THREE.Mesh(new THREE.SphereGeometry(2.6, 28, 20), new THREE.MeshStandardMaterial({ map: bowlTex(), roughness: 0.15, metalness: 0.35, emissive: 0x3b0764, emissiveIntensity: 0.3 }));
+    ball.castShadow = true; ball.position.y = 2.6;
+    g.add(ball); g.userData.ball = ball;
   } else {
-    const ball = new THREE.Mesh(new THREE.SphereGeometry(0.6, 16, 12), new THREE.MeshStandardMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.8, emissive: 0x0284c7, emissiveIntensity: 0.4 }));
-    const pool = new THREE.Mesh(new THREE.CircleGeometry(3.4, 32), new THREE.MeshBasicMaterial({ color: 0x38bdf8, transparent: true, opacity: 0.45, depthWrite: false }));
-    pool.rotation.x = -Math.PI / 2; pool.visible = false;
-    g.add(ball, pool); g.userData.ball = ball; g.userData.pool = pool;
+    const body = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.9, 1.7, 16), new THREE.MeshStandardMaterial({ color: 0xfacc15, metalness: 0.5, roughness: 0.35 }));
+    body.position.y = 0.85; body.castShadow = true;
+    const band = new THREE.Mesh(new THREE.CylinderGeometry(0.93, 0.93, 0.25, 16), new THREE.MeshStandardMaterial({ color: 0x111827 }));
+    band.position.y = 0.85;
+    const lamp = new THREE.Mesh(new THREE.SphereGeometry(0.3, 10, 8), new THREE.MeshBasicMaterial({ color: 0xff1f3d }));
+    lamp.position.y = 1.85;
+    const zone = groundRing(14.2, 15, 0xff1f3d, 0.8); zone.position.y = 0.1;
+    const fill = new THREE.Mesh(new THREE.CircleGeometry(15, 56), addMat(0xff1f3d, 0.1)); fill.rotation.x = -Math.PI / 2; fill.position.y = 0.09;
+    g.add(body, band, lamp, zone, fill);
+    Object.assign(g.userData, { lamp, zone, fill });
   }
   scene.add(g);
   return g;
 }
-function clearProj() { G.proj.forEach((p) => scene.remove(p.mesh)); G.proj = []; }
-function spawnProj(type, owner, x, z, vx, vz, target, vy = 0) {
-  const p = { id: ++G.projId, type, owner, x, z, y: type === 'MISSILE' ? 0.9 : type === 'WATER' ? 1.4 : 0.7, vx, vz, vy, life: type === 'MISSILE' ? 4 : type === 'WATER' ? 6 : 15, target, armT: 0.6, zone: false, mesh: makeProjMesh(type) };
+function clearProj() { G.proj.forEach((p) => scene.remove(p.mesh)); G.proj = []; if (G.quake) G.quake = null; }
+function spawnProj(type, owner, x, z, o = {}) {
+  const p = Object.assign({ id: ++G.projId, type, owner, x, z, y: 0, vx: 0, vz: 0, life: 3, max: 3, delay: 0, hit: new Set(), mesh: makeProjMesh(type) }, o);
+  p.max = p.life;
   G.proj.push(p);
   return p;
 }
 function itemImmune(c) {
-  if (c.shieldT > 0) {
-    if (G.mode === 'RACE') c.shieldT = 0; // 레이스 실드는 1회 막고 사라짐
-    popupAt(c.x, 2.4, c.z, 'BLOCK!', '#67e8f9', 'big');
-    emitRing(c.x, 0.6, c.z, 0x67e8f9, 3.2, 0.3);
-    return true;
-  }
+  if (c.ghostT > 0 || c.rocketT > 0) return true;
   return false;
 }
 function spinout(c, t) {
@@ -3012,129 +3132,176 @@ function spinout(c, t) {
   snd('fall', c);
   if (c.isPlayer) { G.shake = Math.max(G.shake, 0.6); vibrate(80); }
 }
-function blastAt(x, z, radius, power, dmg, owner) {
+// spare: 영향 안 받는 차
+function blastAt(x, z, radius, power, dmg, owner, spare) {
   emitRing(x, 0.4, z, 0xfde047, radius * 1.4, 0.45);
   emitRing(x, 0.5, z, 0xffffff, radius, 0.35);
-  emitSparks(x, 0.9, z, 0xfb923c, 26, 14, 0.6);
-  for (let i = 0; i < 8; i++) emitSmoke(x + rand(-1, 1), 0.7, z + rand(-1, 1), 0x475569, 2, 1, 2, 0.55, 1.5);
+  emitSparks(x, 0.9, z, 0xfb923c, 26 + radius * 2, 14 + radius * 0.6, 0.6);
+  for (let i = 0; i < 8; i++) emitSmoke(x + rand(-1, 1) * radius * 0.3, 0.7, z + rand(-1, 1) * radius * 0.3, 0x475569, 2 + radius * 0.15, 1, 2, 0.55, 1.5);
   sndHit(1, x, z, null, null);
   for (const c of G.cars) {
-    if (!c.alive || c.falling) continue;
+    if (!c.alive || c.falling || c === spare) continue;
     const dx = c.x - x, dz = c.z - z, d = Math.hypot(dx, dz);
     if (d > radius + radiusOf(c)) continue;
     if (itemImmune(c)) continue;
-    if (G.mode === 'RACE') { spinout(c, 1.2); continue; }
     const f = 1 - Math.min(1, d / (radius + 1));
+    if (G.mode === 'RACE') { spinout(c, 0.9 + f * 0.8); c.vy = 6 + 8 * f; c.y = 0.02; continue; }
     const k = (8 + power * f) / massEff(c) * knockResist(c);
     const nx = d > 0.01 ? dx / d : 1, nz = d > 0.01 ? dz / d : 0;
-    c.vx += nx * k; c.vz += nz * k; c.vy = 4 * f; c.y = 0.01;
+    c.vx += nx * k; c.vz += nz * k; c.vy = 3 + 4 * f; c.y = 0.01;
     c.slideT = Math.max(c.slideT, 0.8); c.stunT = Math.max(c.stunT, 0.3); c.wobble = 1.1;
     if (owner && owner !== c) hitCredit(c, owner);
     applyDamage(c, dmg * (0.5 + f * 0.5) * dmgTakenMul(c), owner && owner !== c ? owner : null);
   }
+  // 펜스도 날려버린다
+  if (G.mode === 'BATTLE' && G.fence.R) {
+    for (const seg of G.fence.segs) {
+      if (!seg.alive) continue;
+      const d = Math.hypot(seg.g.position.x - x, seg.g.position.z - z);
+      if (d < radius + 1) damageFence(seg, power * 0.6 * (1 - d / (radius + 1)) + 5, owner);
+    }
+  }
 }
-function pickMissileTarget(c) {
-  if (G.mode === 'RACE') return carAhead(c) || null;
-  const fx = Math.sin(c.h), fz = Math.cos(c.h);
-  let best = null, bs = 1e9;
-  for (const o of G.cars) {
-    if (o === c || !o.alive || o.falling) continue;
-    const dx = o.x - c.x, dz = o.z - c.z, d = Math.hypot(dx, dz);
-    const front = (dx * fx + dz * fz) / (d || 1);
-    const s = d - front * 12;
-    if (s < bs) { bs = s; best = o; }
+function trackIdxNear(p, win = 40) {
+  const T = TRACK;
+  let best = p.tIdx || 0, bd = 1e18;
+  for (let k = -win; k <= win; k++) {
+    const i = ((p.tIdx || 0) + k + T.N) % T.N;
+    const d = (T.px[i] - p.x) ** 2 + (T.pz[i] - p.z) ** 2;
+    if (d < bd) { bd = d; best = i; }
   }
   return best;
 }
 function updateProj(dt) {
   for (let i = G.proj.length - 1; i >= 0; i--) {
     const p = G.proj[i];
+    if (p.delay > 0) { p.delay -= dt; continue; }
     p.life -= dt;
     let dead = p.life <= 0;
-    if (p.type === 'MISSILE') {
-      const t = p.target;
-      const sp = 46;
-      if (t && t.alive && !t.falling) {
-        const dx = t.x - p.x, dz = t.z - p.z, d = Math.hypot(dx, dz) || 1;
-        p.vx = lerp(p.vx, dx / d * sp, Math.min(1, dt * 3.2)); p.vz = lerp(p.vz, dz / d * sp, Math.min(1, dt * 3.2));
+    if (p.type === 'HOLE') {
+      // 블랙홀: 주변 모든 차를 소용돌이로 빨아들인다
+      const R = 22, race = G.mode === 'RACE';
+      for (const c of G.cars) {
+        if (!c.alive || c.falling || c === p.owner || itemImmune(c)) continue;
+        const dx = p.x - c.x, dz = p.z - c.z, d = Math.hypot(dx, dz);
+        if (d > R || d < 0.01) continue;
+        const f = 1 - d / R;
+        const pull = (10 + 38 * f) * (race ? 0.8 : 1);
+        c.vx += (dx / d * pull + dz / d * 16 * f) * dt;
+        c.vz += (dz / d * pull - dx / d * 16 * f) * dt;
+        c.slideT = Math.max(c.slideT, 0.15);
+        if (d < 3) { c.spinoutT = Math.max(c.spinoutT, 0.2); c.vx *= Math.exp(-4 * dt); c.vz *= Math.exp(-4 * dt); }
+        if (Math.random() < dt * 6) emitSmoke(c.x, 0.6, c.z, 0xa855f7, 0.8, 0.6, 0.6, 0.4, 0.3);
       }
-      const l = Math.hypot(p.vx, p.vz) || 1; p.vx = p.vx / l * sp; p.vz = p.vz / l * sp;
+      if (Math.random() < dt * 30) { const a = Math.random() * TAU, r = rand(6, 18); emitSparks(p.x + Math.sin(a) * r, 0.6, p.z + Math.cos(a) * r, 0xc084fc, 1, 2, 0.4); }
+      if (dead) {
+        blastAt(p.x, p.z, 11, 36, 8, p.owner, p.owner);
+        emitRing(p.x, 2, p.z, 0xa855f7, 24, 0.6);
+        sndG('burst'); flash(0.35);
+      }
+    } else if (p.type === 'METEOR') {
+      p.y -= 42 * dt;
+      if (p.y <= 0.6) {
+        dead = true;
+        blastAt(p.x, p.z, 5.5, 26, 6, p.owner, p.owner);
+        emitDebris(p.x, 0.6, p.z, 0x7c2d12, 8, 12);
+        for (let k = 0; k < 6; k++) emitSmoke(p.x + rand(-2, 2), 0.6, p.z + rand(-2, 2), 0xf97316, 2.5, 1.2, 2, 0.5, 2.5);
+      }
+    } else if (p.type === 'BALL') {
+      const sp = Math.hypot(p.vx, p.vz) || 1;
+      if (G.mode === 'RACE') {
+        // 트랙을 따라 굴러간다
+        p.tIdx = trackIdxNear(p);
+        const T = TRACK, j = (p.tIdx + p.dir * Math.round(10 / T.spacing) + T.N) % T.N;
+        const dx = T.px[j] - p.x, dz = T.pz[j] - p.z, l = Math.hypot(dx, dz) || 1;
+        p.vx = lerp(p.vx, dx / l * 34, Math.min(1, dt * 5)); p.vz = lerp(p.vz, dz / l * 34, Math.min(1, dt * 5));
+      }
       p.x += p.vx * dt; p.z += p.vz * dt;
-      if (Math.random() < dt * 40) emitSmoke(p.x - p.vx / sp, 0.9, p.z - p.vz / sp, 0xe2e8f0, 0.7, 0.5, 0.4, 0.45, 0.2);
+      if (G.mode === 'BATTLE') {
+        const r = Math.hypot(p.x, p.z);
+        if (r > G.arenaR - 2.6) {
+          const seg = G.fence.R === G.arenaR ? G.fence.segs[fenceIndexAt(p.x, p.z)] : null;
+          if (seg && seg.alive) {
+            const nx = p.x / r, nz = p.z / r, vn = p.vx * nx + p.vz * nz;
+            if (vn > 0) { p.vx -= 2 * vn * nx; p.vz -= 2 * vn * nz; damageFence(seg, 25, p.owner); }
+            p.x = nx * (G.arenaR - 2.6); p.z = nz * (G.arenaR - 2.6);
+          } else if (r > G.arenaR + 1) { p.y -= 20 * dt; if (p.y < -30) dead = true; }
+        }
+      } else clampToTrack(p);
+      if (Math.random() < dt * 20) emitSparks(p.x, 0.3, p.z, 0xf0abfc, 1, 5, 0.3);
       for (const c of G.cars) {
-        if (!c.alive || c.falling || (c === p.owner && p.life > 3.7)) continue;
-        if (Math.hypot(c.x - p.x, c.z - p.z) < radiusOf(c) + 0.7) {
-          dead = true;
-          if (G.mode === 'RACE') { spinout(c, 1.4); blastFx(p.x, p.z); }
-          else if (!itemImmune(c)) {
-            const k = 24 / massEff(c) * knockResist(c);
-            c.vx += p.vx / sp * k; c.vz += p.vz / sp * k;
-            c.slideT = Math.max(c.slideT, 0.8); c.stunT = Math.max(c.stunT, 0.35); c.wobble = 1.2;
+        if (!c.alive || c.falling || c.y > 2.5 || p.hit.has(c) || (c === p.owner && p.life > p.max - 0.6)) continue;
+        if (Math.hypot(c.x - p.x, c.z - p.z) < radiusOf(c) + 2.6) {
+          p.hit.add(c);
+          if (itemImmune(c)) continue;
+          sndHit(1, p.x, p.z, c, null); emitSparks(c.x, 1, c.z, 0xf0abfc, 20, 12);
+          if (G.mode === 'RACE') { spinout(c, 1.6); c.vy = 9; c.y = 0.02; }
+          else {
+            const k = 42 / massEff(c) * knockResist(c);
+            c.vx += p.vx / sp * k; c.vz += p.vz / sp * k; c.vy = 6; c.y = 0.02;
+            c.slideT = Math.max(c.slideT, 1); c.stunT = Math.max(c.stunT, 0.5); c.wobble = 1.2;
             hitCredit(c, p.owner); applyDamage(c, 9 * dmgTakenMul(c), p.owner);
-            blastFx(p.x, p.z);
-          }
-          break;
-        }
-      }
-      if (G.mode === 'BATTLE' && Math.hypot(p.x, p.z) > G.arenaR + 25) dead = true;
-    } else if (p.type === 'BANANA') {
-      p.armT -= dt;
-      for (const c of G.cars) {
-        if (!c.alive || c.falling || c.y > 1 || (c === p.owner && p.armT > 0)) continue;
-        if (Math.hypot(c.x - p.x, c.z - p.z) < radiusOf(c) + 0.5) {
-          dead = true; spinout(c, G.mode === 'RACE' ? 1.1 : 0.8);
-          emitSparks(p.x, 0.5, p.z, 0xfde047, 10, 6);
-          break;
-        }
-      }
-      if (G.mode === 'BATTLE' && Math.hypot(p.x, p.z) > G.arenaR) dead = true;
-    } else if (p.type === 'MINE') {
-      p.armT -= dt;
-      if (p.armT <= 0) {
-        for (const c of G.cars) {
-          if (!c.alive || c.falling || c.y > 1) continue;
-          if (Math.hypot(c.x - p.x, c.z - p.z) < radiusOf(c) + 1.1) { dead = true; blastAt(p.x, p.z, 4.2, 20, 8, p.owner); break; }
-        }
-      }
-      if (Math.hypot(p.x, p.z) > G.arenaR) dead = true;
-    } else if (p.type === 'WATER') {
-      if (!p.zone) {
-        p.vy -= 28 * dt; p.x += p.vx * dt; p.z += p.vz * dt; p.y += p.vy * dt;
-        if (p.y <= 0.3) { p.zone = true; p.y = 0.05; p.life = 4.5; emitRing(p.x, 0.2, p.z, 0x38bdf8, 4, 0.4); snd('phase', p.owner); }
-      } else {
-        for (const c of G.cars) {
-          if (!c.alive || c.falling || c.trapT > 0 || c.y > 1) continue;
-          if (Math.hypot(c.x - p.x, c.z - p.z) < 3.3) {
-            if (itemImmune(c)) continue;
-            c.trapT = 1.4; c.stunT = Math.max(c.stunT, 1.4); c.vx *= 0.1; c.vz *= 0.1;
-            emitSparks(c.x, 1, c.z, 0x7dd3fc, 10, 5);
-            snd('shield', c);
           }
         }
       }
-      if (G.mode === 'RACE' && !p.zone) clampToTrack(p);
+    } else if (p.type === 'NUKE') {
+      p.beep = (p.beep || 0) - dt;
+      if (p.beep <= 0) { p.beep = Math.max(0.12, p.life * 0.22); snd('beep', p.owner); }
+      if (dead) {
+        blastAt(p.x, p.z, 15, 55, 20, p.owner, null);
+        emitRing(p.x, 1, p.z, 0xffffff, 34, 0.7);
+        emitRing(p.x, 3, p.z, 0xfde047, 26, 0.8);
+        for (let k = 0; k < 18; k++) emitSmoke(p.x + rand(-6, 6), rand(1, 5), p.z + rand(-6, 6), k % 2 ? 0xf97316 : 0x334155, 5, 2.5, 4, 0.7, 3);
+        sndG('burst'); sndG('crumble'); flash(0.95);
+        G.shake = Math.max(G.shake, 1.5);
+      }
     }
     if (dead) { scene.remove(p.mesh); G.proj.splice(i, 1); }
   }
-}
-function blastFx(x, z) {
-  emitRing(x, 0.5, z, 0xfb923c, 4, 0.4);
-  emitSparks(x, 1, z, 0xfde047, 22, 13, 0.55);
-  for (let i = 0; i < 6; i++) emitSmoke(x + rand(-0.6, 0.6), 0.8, z + rand(-0.6, 0.6), 0x64748b, 1.6, 0.9, 1.6, 0.5, 1.2);
-  sndHit(0.9, x, z, null, null);
+  // 대지진
+  const q = G.quake;
+  if (q && q.t > 0) {
+    q.t -= dt; q.a += dt * 1.4;
+    if (Math.random() < dt * 12) { const a = Math.random() * TAU, r = rand(0, G.arenaR); emitSmoke(Math.sin(a) * r, 0.3, Math.cos(a) * r, 0xa8a29e, 2.5, 1, 2, 0.5, 1.5); }
+    if (q.t <= 0) G.quake = null;
+  }
 }
 function renderProj(dt) {
   const now = performance.now() * 0.001;
   for (const p of G.proj) {
-    const m = p.mesh;
+    const m = p.mesh, u = m.userData;
     if (p._rx !== undefined) { p.x = lerp(p.x, p._rx, Math.min(1, dt * 18)); p.z = lerp(p.z, p._rz, Math.min(1, dt * 18)); p.y = lerp(p.y, p._ry, Math.min(1, dt * 18)); }
-    m.position.set(p.x, p.y, p.z);
-    if (p.type === 'MISSILE') { m.rotation.y = Math.atan2(p.vx || 0.001, p.vz || 0.001); m.userData.flame.scale.setScalar(0.8 + Math.random() * 0.5); }
-    else if (p.type === 'BANANA') m.rotation.y = now;
-    else if (p.type === 'MINE') { m.userData.led.visible = Math.sin(now * 12) > 0; }
-    else if (p.type === 'WATER') { m.userData.ball.visible = !p.zone; m.userData.pool.visible = p.zone; if (p.zone) m.userData.pool.material.opacity = 0.3 + Math.sin(now * 5) * 0.12; }
+    m.visible = !(p.delay > 0) || p.type === 'METEOR';
+    m.position.set(p.x, p.type === 'METEOR' || p.type === 'BALL' ? 0 : 0, p.z);
+    if (p.type === 'HOLE') {
+      const age = p.max - p.life, k = Math.min(1, age / 0.4) * (p.life < 0.35 ? 1 + (0.35 - p.life) * 3 : 1);
+      u.core.scale.setScalar(k * (1 + Math.sin(now * 20) * 0.05));
+      u.d1.rotation.z += dt * 6; u.d2.rotation.z -= dt * 4; u.d3.rotation.z += dt * 10;
+      [u.d1, u.d2, u.d3].forEach((d) => d.scale.setScalar(k));
+      u.pull.rotation.z -= dt * 2; u.pull.material.opacity = 0.12 + Math.sin(now * 8) * 0.06;
+    } else if (p.type === 'METEOR') {
+      const falling = !(p.delay > 0);
+      u.rock.visible = u.fire.visible = u.halo.visible = falling;
+      u.rock.position.y = u.halo.position.y = p.y; u.fire.position.y = p.y + 3.6;
+      u.rock.rotation.x += dt * 5; u.rock.rotation.z += dt * 3;
+      const k = 1 - Math.min(1, Math.max(0, p.y) / 55);
+      u.warn.position.y = 0.12; u.dot.position.y = 0.11;
+      u.warn.scale.setScalar(1.3 - k * 0.3); u.warn.material.opacity = 0.35 + 0.45 * Math.abs(Math.sin(now * (8 + k * 14)));
+      u.dot.material.opacity = 0.1 + k * 0.3;
+    } else if (p.type === 'BALL') {
+      u.ball.position.y = 2.6 + Math.min(0, p.y);
+      const sp = Math.hypot(p.vx, p.vz);
+      if (sp > 0.1) { _ax.set(p.vz / sp, 0, -p.vx / sp); u.ball.rotateOnWorldAxis(_ax, sp * dt / 2.6); }
+    } else {
+      const k = p.life / p.max;
+      u.lamp.visible = Math.sin(now * (6 + (1 - k) * 30)) > 0;
+      u.zone.material.opacity = 0.4 + 0.5 * Math.abs(Math.sin(now * (4 + (1 - k) * 16)));
+      u.fill.material.opacity = 0.06 + (1 - k) * 0.22;
+      m.rotation.y += dt;
+    }
   }
 }
+const _ax = new THREE.Vector3();
 
 /* ---------- 아이템 사용 ---------- */
 function carAhead(c) {
@@ -3142,40 +3309,106 @@ function carAhead(c) {
   if (r <= 1) return null;
   return raceOrder()[r - 2] || null;
 }
+function others(c) { return G.cars.filter((o) => o !== c && o.alive && !o.falling && !o.finished); }
+function raceAhead(c) { return raceOrder().slice(0, Math.max(0, raceRankOf(c) - 1)).filter((o) => !o.finished); }
+function swapCars(a, b) {
+  const keys = ['x', 'z', 'h', 'tIdx', 'lap'];
+  emitRing(a.x, 0.5, a.z, 0xa855f7, 5, 0.4); emitRing(b.x, 0.5, b.z, 0xa855f7, 5, 0.4);
+  emitSparks(a.x, 1, a.z, 0xe9d5ff, 18, 10); emitSparks(b.x, 1, b.z, 0xe9d5ff, 18, 10);
+  keys.forEach((k) => { const t = a[k]; a[k] = b[k]; b[k] = t; });
+  const sa = Math.hypot(a.vx, a.vz), sb = Math.hypot(b.vx, b.vz);
+  a.vx = Math.sin(a.h) * Math.max(sa, sb); a.vz = Math.cos(a.h) * Math.max(sa, sb);
+  b.vx *= 0.2; b.vz *= 0.2; b.stunT = Math.max(b.stunT, 0.9); b.spinoutT = Math.max(b.spinoutT, 0.9);
+  popupAt(a.x, 3, a.z, 'SWAP!', '#e9d5ff', 'big'); popupAt(b.x, 3, b.z, '강탈당함!', '#fb7185', 'big');
+  snd('phase', a); snd('phase', b);
+  if (a.isPlayer || b.isPlayer) local(() => flash(0.3));
+}
 function useItem(c) {
   const it = c.item;
   if (!it) return;
   c.item = null;
+  const race = G.mode === 'RACE';
   const fx = Math.sin(c.h), fz = Math.cos(c.h);
   shout(c, `${ITEMS[it].e} ${ITEMS[it].n}!`);
+  feed(`${ITEMS[it].e} <b style="color:${c.def.css}">${esc(carName(c))}</b> ${ITEMS[it].n}!`);
   switch (it) {
-    case 'TURBO': c.boostT = 1.4; c.slideT = 0; snd('nitro', c); emitRing(c.x, 0.3, c.z, 0x22d3ee, 3.2, 0.3); if (c.isPlayer) G.kick = 1; break;
-    case 'MISSILE': spawnProj('MISSILE', c, c.x + fx * 2.2, c.z + fz * 2.2, fx * 46, fz * 46, pickMissileTarget(c)); snd('rocket', c); break;
-    case 'BANANA': spawnProj('BANANA', c, c.x - fx * 2.6, c.z - fz * 2.6, 0, 0, null); snd('skill', c); break;
-    case 'MINE': spawnProj('MINE', c, c.x - fx * 2.8, c.z - fz * 2.8, 0, 0, null); snd('anchor', c); break;
-    case 'WATER': spawnProj('WATER', c, c.x + fx * 2, c.z + fz * 2, fx * 24 + c.vx * 0.6, fz * 24 + c.vz * 0.6, null, 9); snd('jump', c); break;
-    case 'BUBBLE': c.shieldT = 4.5; snd('shield', c); break;
-    case 'SHIELD': c.shieldT = 5; snd('shield', c); break;
-    case 'GIANT': c.giantT = 5.5; snd('slam', c); emitRing(c.x, 0.3, c.z, 0x84cc16, 5, 0.45); break;
-    case 'MAGNET': c.magnetT = 2.4; c.magTarget = carAhead(c); snd('save', c); break;
-    case 'BOLT': {
-      sndG('burst'); flash(0.45);
-      const ahead = G.mode === 'RACE' ? raceOrder().slice(0, raceRankOf(c) - 1) : G.cars.filter((o) => o !== c && Math.hypot(o.x - c.x, o.z - c.z) < 34);
-      ahead.forEach((o) => {
-        if (!o.alive || o.falling || o === c || itemImmune(o)) return;
-        o.slowT = G.mode === 'RACE' ? 2.6 : 2.2;
-        o.stunT = Math.max(o.stunT, 0.6); o.spinoutT = Math.max(o.spinoutT, 0.6);
-        o.spin = Math.max(0, o.spin - 30);
-        emitRing(o.x, 0.4, o.z, 0xfde047, 3, 0.35);
-        emitSparks(o.x, 3, o.z, 0xfef08a, 12, 9);
-      });
+    case 'BLACKHOLE': {
+      let x = c.x + fx * 14, z = c.z + fz * 14;
+      if (race) { const lead = raceAhead(c)[0]; if (lead) { const j = (lead.tIdx + Math.round(12 / TRACK.spacing)) % TRACK.N; x = TRACK.px[j]; z = TRACK.pz[j]; } }
+      else { const r = Math.hypot(x, z); if (r > G.arenaR - 4) { x *= (G.arenaR - 4) / r; z *= (G.arenaR - 4) / r; } }
+      spawnProj('HOLE', c, x, z, { life: 3.4 });
+      sndG('tornado');
       break;
     }
+    case 'METEOR': {
+      const tg = race ? raceAhead(c) : others(c);
+      const list = tg.length ? tg : others(c);
+      for (let k = 0; k < 9; k++) {
+        const t = list[k % Math.max(1, list.length)];
+        let x, z;
+        if (t) { x = t.x + t.vx * 1.4 + rand(-3, 3); z = t.z + t.vz * 1.4 + rand(-3, 3); }
+        else { const a = Math.random() * TAU, r = rand(0, G.arenaR - 3); x = Math.sin(a) * r; z = Math.cos(a) * r; }
+        spawnProj('METEOR', c, x, z, { y: 55, life: 9, delay: k * 0.28 });
+      }
+      sndG('alarm');
+      break;
+    }
+    case 'SWAP': {
+      let t = null;
+      if (race) { t = raceAhead(c)[0] || null; }
+      else { const os = others(c).filter((o) => !itemImmune(o)); t = os[Math.floor(Math.random() * os.length)] || null; }
+      if (t && !itemImmune(t)) swapCars(c, t);
+      else { c.boostT = 2; snd('nitro', c); }
+      break;
+    }
+    case 'MIRROR': {
+      others(c).forEach((o) => { if (!itemImmune(o)) { o.mirrorT = 4; emitRing(o.x, 2.5, o.z, 0xd946ef, 3, 0.4); } });
+      sndG('phase'); flash(0.25);
+      break;
+    }
+    case 'FREEZE': {
+      const tg = race ? raceAhead(c) : others(c).filter((o) => Math.hypot(o.x - c.x, o.z - c.z) < 32);
+      tg.forEach((o) => {
+        if (!o.alive || itemImmune(o)) return;
+        o.freezeT = race ? 2.2 : 2.6; o.stunT = Math.max(o.stunT, o.freezeT);
+        emitSparks(o.x, 1.2, o.z, 0xe0f2fe, 16, 7); emitRing(o.x, 0.3, o.z, 0x7dd3fc, 4, 0.4);
+      });
+      emitRing(c.x, 0.3, c.z, 0x7dd3fc, race ? 10 : 32, 0.6);
+      sndG('shield');
+      break;
+    }
+    case 'BOWLING': {
+      let dir = 1;
+      if (race && raceRankOf(c) === 1) dir = -1; // 선두는 뒤로 굴린다
+      const bx = race ? c.x + Math.sin(c.h) * 4 * dir : c.x + fx * 4, bz = race ? c.z + Math.cos(c.h) * 4 * dir : c.z + fz * 4;
+      spawnProj('BALL', c, bx, bz, { vx: fx * 34 * dir, vz: fz * 34 * dir, life: race ? 7 : 6, dir, tIdx: c.tIdx });
+      snd('slam', c);
+      break;
+    }
+    case 'ROCKET': c.rocketT = 2.4; c.rocketMax = 2.4; c.spinoutT = 0; c.stunT = 0; c.freezeT = 0; snd('rocket', c); emitRing(c.x, 0.3, c.z, 0xfb923c, 5, 0.4); if (c.isPlayer) local(() => { G.kick = 1; G.shake = 0.6; }); break;
+    case 'SLAM': c.vy = 19; c.y = 0.02; c.airborne = true; c.slamPending = true; c.vx += fx * 10; c.vz += fz * 10; snd('jump', c); break;
+    case 'NUKE': spawnProj('NUKE', c, c.x - fx * 2, c.z - fz * 2, { life: 3 }); c.boostT = 1.6; sndG('alarm'); break;
+    case 'QUAKE': G.quake = { t: 3.6, a: Math.random() * TAU, owner: c }; sndG('crumble'); flash(0.2); break;
+    case 'GHOST': {
+      c.ghostT = 4.5; snd('phase', c);
+      const tgt = race ? raceAhead(c).reverse().find((o) => o.item) : others(c).find((o) => o.item);
+      if (tgt) { c.item = tgt.item; tgt.item = null; popupAt(tgt.x, 3, tgt.z, '아이템 도둑맞음!', '#fb7185', 'big'); }
+      break;
+    }
+    case 'MEGA': c.giantT = 6.5; snd('slam', c); emitRing(c.x, 0.3, c.z, 0x84cc16, 7, 0.5); if (c.isPlayer) local(() => { G.shake = 0.7; }); break;
   }
+}
+// 메가 점프 착지 충격파
+function slamLand(c) {
+  c.slamPending = false;
+  if (G.mode === 'BATTLE' && Math.hypot(c.x, c.z) > G.arenaR + 0.15) return;
+  blastAt(c.x, c.z, 10, 40, 9, c, c);
+  emitRing(c.x, 0.2, c.z, 0x84cc16, 14, 0.5);
+  if (c.isPlayer || camNear(c)) G.shake = Math.max(G.shake, 1);
 }
 
 /* ---------- 배틀: 안전 펜스 ---------- */
-const FENCE_N = 36, FENCE_HP = 100;
+const FENCE_N = 36, FENCE_HP = 160;
 const fenceGroup = new THREE.Group();
 scene.add(fenceGroup);
 function clearFence() {
@@ -3230,7 +3463,7 @@ function damageFence(seg, dmg, c) {
 // 배틀 stepCar에서 호출: 펜스가 살아있는 방향이면 튕겨낸다
 function fenceCollide(c) {
   const F = G.fence;
-  if (!F.R || F.R !== G.arenaR || c.y > 1.2 || isGhost(c)) return;
+  if (!F.R || F.R !== G.arenaR || c.y > 3.5 || isGhost(c) || c.ghostT > 0) return;
   const r = Math.hypot(c.x, c.z), rad = radiusOf(c);
   if (r < F.R - rad - 0.25 || r > F.R + 1.6) return;
   const seg = F.segs[fenceIndexAt(c.x, c.z)];
@@ -3242,7 +3475,7 @@ function fenceCollide(c) {
   if (vn > 0) {
     c.vx -= nx * vn * 1.5; c.vz -= nz * vn * 1.5;
     c.wobble = Math.max(c.wobble, Math.min(1.1, 0.3 + vn * 0.03));
-    const dmg = Math.max(0, vn - 4) * 6.5 * (c.dashT > 0 ? 1.6 : 1) * (c.giantT > 0 ? 1.8 : 1) * (isRocket(c) ? 2 : 1);
+    const dmg = Math.max(0, vn - 5) * 5.5 * (c.dashT > 0 ? 1.6 : 1) * (c.giantT > 0 ? 1.8 : 1) * (isRocket(c) ? 2 : 1);
     damageFence(seg, dmg, c);
     if (vn > 7) { emitSparks(nx * F.R, 0.7, nz * F.R, 0xfde047, Math.round(4 + vn * 0.3), 8); sndHit(Math.min(0.8, vn / 35), c.x, c.z, c, null); }
   }
@@ -3567,7 +3800,7 @@ function updateRaceAI(c, dt) {
   let lane = ai.lane;
   // 앞의 바나나·물폭탄 피하기
   for (const p of G.proj) {
-    if (p.type === 'MISSILE' || (p.type === 'WATER' && !p.zone)) continue;
+    if (p.type !== 'BALL' && p.type !== 'METEOR') continue;
     const dx = p.x - c.x, dz = p.z - c.z, d = Math.hypot(dx, dz);
     if (d < 22 && (dx * Math.sin(c.h) + dz * Math.cos(c.h)) > 0) { const po = (p.x - T.px[i]) * T.nx[i] + (p.z - T.pz[i]) * T.nz[i]; lane = po > 0 ? -0.55 : 0.55; }
   }
@@ -3579,6 +3812,7 @@ function updateRaceAI(c, dt) {
   inp.steer = clamp(-diff * 2.5 + ai.noise, -1, 1);
   inp.thr = (bend > 0.95 && sp > c.def.maxSpeed * 0.78) ? 0.35 : 1;
   inp.drift = bend > 0.5 && sp > 14 && Math.abs(inp.steer) > 0.35;
+  if (c.mirrorT > 0 && c.mirrorT < 2.8) inp.steer = -inp.steer; // 반전에 적응
   if (G.phase !== 'PLAY' || c.finished) return;
   // 러버밴딩 (재미용): 사람보다 너무 앞서면 살짝 느리게, 뒤처지면 살짝 빠르게
   const humans = G.cars.filter((x) => x.human && !x.finished);
@@ -3592,20 +3826,22 @@ function updateRaceAI(c, dt) {
   // 아이템
   if (c.item && c.roulette <= 0) {
     ai.itemT = (ai.itemT || 0) + dt;
+    const rank = raceRankOf(c);
+    const behind = raceOrder()[rank];
+    const dBehind = behind ? Math.hypot(behind.x - c.x, behind.z - c.z) : 1e9;
     const ahead = carAhead(c);
     const dAhead = ahead ? Math.hypot(ahead.x - c.x, ahead.z - c.z) : 1e9;
-    const behind = raceOrder()[raceRankOf(c)];
-    const dBehind = behind ? Math.hypot(behind.x - c.x, behind.z - c.z) : 1e9;
     let use = false;
     switch (c.item) {
-      case 'MISSILE': use = dAhead < 70; break;
-      case 'BANANA': use = dBehind < 16 || ai.itemT > 4; break;
-      case 'WATER': use = dAhead < 34 && dAhead > 8; break;
-      case 'TURBO': case 'MAGNET': use = bend < 0.3; break;
-      case 'SHIELD': use = G.proj.some((p) => p.type === 'MISSILE' && p.target === c) || ai.itemT > 6; break;
-      case 'BOLT': use = true; break;
+      case 'ROCKET': use = bend < 0.7; break;
+      case 'SWAP': use = rank > 2; break;
+      case 'BLACKHOLE': case 'FREEZE': case 'METEOR': use = rank > 1; break;
+      case 'MIRROR': use = ai.itemT > 1; break;
+      case 'BOWLING': use = rank === 1 ? dBehind < 45 : dAhead < 60; break;
+      case 'GHOST': use = G.proj.some((p) => Math.hypot(p.x - c.x, p.z - c.z) < 26) || ai.itemT > 3; break;
+      case 'MEGA': use = dAhead < 14 || dBehind < 10 || ai.itemT > 4; break;
     }
-    if ((use && Math.random() < dt * 3 * D.skill) || ai.itemT > 9) { inp.itemPress = true; ai.itemT = 0; }
+    if ((use && Math.random() < dt * 3 * D.skill) || ai.itemT > 8) { inp.itemPress = true; ai.itemT = 0; }
   }
 }
 // 배틀 AI의 아이템 사용 판단
@@ -3614,24 +3850,28 @@ function aiBattleItems(c, dt) {
   const D = DIFF[G.diff], ai = c.ai;
   ai.itemT = (ai.itemT || 0) + dt;
   const fx = Math.sin(c.h), fz = Math.cos(c.h);
-  let front = 1e9, back = 1e9, near = 0;
+  let front = 1e9, near = 0, mid = 0;
   for (const o of G.cars) {
     if (o === c || !o.alive || o.falling) continue;
     const dx = o.x - c.x, dz = o.z - c.z, d = Math.hypot(dx, dz);
-    const dot = (dx * fx + dz * fz) / (d || 1);
-    if (dot > 0.6) front = Math.min(front, d); else if (dot < -0.5) back = Math.min(back, d);
-    if (d < 9) near++;
+    if ((dx * fx + dz * fz) / (d || 1) > 0.6) front = Math.min(front, d);
+    if (d < 11) near++;
+    if (d < 30) mid++;
   }
+  const r = Math.hypot(c.x, c.z);
   let use = false;
   switch (c.item) {
-    case 'MISSILE': use = front < 30; break;
-    case 'MINE': case 'BANANA': use = back < 9; break;
-    case 'BUBBLE': use = near >= 1 && c.hitFlash > 0; break;
-    case 'TURBO': use = front < 16 && Math.hypot(c.x, c.z) < G.arenaR - 8; break;
-    case 'GIANT': use = near >= 1; break;
-    case 'BOLT': use = near >= 2 || ai.itemT > 3; break;
+    case 'BLACKHOLE': case 'BOWLING': use = front < 28; break;
+    case 'METEOR': case 'MIRROR': case 'QUAKE': use = ai.itemT > 1.2; break;
+    case 'SWAP': use = r > G.arenaR - 7 || ai.itemT > 3; break;
+    case 'FREEZE': use = mid >= 2; break;
+    case 'SLAM': case 'MEGA': use = near >= 1; break;
+    case 'NUKE': use = near >= 2; break;
   }
-  if ((use && Math.random() < dt * 3 * D.skill) || ai.itemT > 8) { c.input.itemPress = true; ai.itemT = 0; }
+  if ((use && Math.random() < dt * 3 * D.skill) || ai.itemT > 8) {
+    c.input.itemPress = true; ai.itemT = 0;
+    if (c.item === 'NUKE') { ai.fleeT = 3.2; ai.fx = c.x; ai.fz = c.z; }
+  }
 }
 
 /* ---------- 레이스 HUD · 미니맵 · 결과 ---------- */
@@ -3700,7 +3940,7 @@ function updateItemHUD(dt) {
   if (!p) return;
   rouletteT += dt;
   if (p.roulette > 0) {
-    const pool = G.mode === 'RACE' ? ['MISSILE', 'BANANA', 'WATER', 'TURBO', 'SHIELD', 'MAGNET'] : ['MISSILE', 'MINE', 'BANANA', 'BUBBLE', 'TURBO', 'GIANT', 'BOLT'];
+    const pool = G.mode === 'RACE' ? RACE_ITEMS : BATTLE_POOL.map((x) => x[0]);
     const it = pool[Math.floor(rouletteT * 14) % pool.length];
     box.innerHTML = `<span class="ie">${ITEMS[it].e}</span><span class="in">?</span>`;
     box.className = 'roll';
@@ -3708,6 +3948,25 @@ function updateItemHUD(dt) {
     box.innerHTML = `<span class="ie">${ITEMS[p.item].e}</span><span class="in">${ITEMS[p.item].n}</span><span class="ik">${IS_TOUCH ? '' : 'F'}</span>`;
     box.className = 'ready';
   } else { box.innerHTML = '<span class="in" style="opacity:.6">아이템<br>없음</span>'; box.className = ''; }
+}
+// 내 차에 걸린 극단 효과 경고 + 화면 필터
+let _fxSig = '';
+function updateFxWarn() {
+  const p = G.player, el = $('fxwarn');
+  if (!p) return;
+  let t = '', cls = '';
+  const nuke = G.proj.find((q) => q.type === 'NUKE' && Math.hypot(q.x - p.x, q.z - p.z) < 16);
+  if (nuke && p.alive) { t = `☢️ 핵폭탄 범위! 도망쳐! ${Math.max(0, nuke.life).toFixed(1)}`; cls = 'nuke'; }
+  else if (p.freezeT > 0) { t = `🧊 꽁꽁 얼었다! ${p.freezeT.toFixed(1)}`; cls = 'ice'; }
+  else if (p.mirrorT > 0) t = `🪞 조작 반전! ${p.mirrorT.toFixed(1)}`;
+  else if (p.rocketT > 0) t = '🚀 로켓 점프!';
+  else if (p.ghostT > 0) t = `👻 유령 모드 ${p.ghostT.toFixed(1)}`;
+  else if (p.giantT > 0) t = `🍄 메가 거대화! ${p.giantT.toFixed(1)}`;
+  else if (G.quake && G.quake.owner !== p) { t = '🌋 대지진! 경기장이 기울어진다!'; cls = 'nuke'; }
+  const sig = t + cls;
+  if (sig !== _fxSig) { _fxSig = sig; el.textContent = t; el.className = t ? cls : 'hidden'; }
+  const f = p.mirrorT > 0 ? 'hue-rotate(150deg) saturate(1.5)' : p.freezeT > 0 ? 'saturate(0.35) brightness(1.15)' : '';
+  if (renderer.domElement.style.filter !== f) renderer.domElement.style.filter = f;
 }
 
 
@@ -4112,7 +4371,8 @@ function encCar(c) {
     r2(c.skillCd), r2(c.dashT), r2(c.dashPow), c.drifting ? 1 : 0, c.falling ? 1 : 0, c.alive ? 1 : 0, r2(c.wobble), r2(c.hitFlash),
     r2(c.steerVis), c.input.thr, c.kos, Math.round(c.dmg), r2(c.stunT), ER_CODE[c.elimReason] || 0, r2(c.elimT), c.wispSaved ? 1 : 0,
     c.item ? ITEM_IDS.indexOf(c.item) : -1, r2(c.roulette), r2(c.boostT), r2(c.shieldT), r2(c.giantT), r2(c.slowT), r2(c.spinoutT), r2(c.trapT),
-    c.lap, c.tIdx, c.place, r2(c.finishT), r2(c.magnetT), c.finished ? 1 : 0, c.dnf ? 1 : 0, c.wrongWay ? 1 : 0];
+    c.lap, c.tIdx, c.place, r2(c.finishT), r2(c.magnetT), c.finished ? 1 : 0, c.dnf ? 1 : 0, c.wrongWay ? 1 : 0,
+    r2(c.mirrorT), r2(c.freezeT), r2(c.rocketT), r2(c.ghostT), r2(c.flatT)];
 }
 function hostTick() {
   if (!isHostOnline()) { net.fx = []; return; }
@@ -4127,7 +4387,8 @@ function hostTick() {
     orbs: G.orbs.map((o) => [o.id, r2(o.x), r2(o.z)]),
     c: G.cars.map(encCar), fx: net.fx,
     bx: G.boxes.map((b) => (b.active ? 1 : 0)).join(''),
-    pj: G.proj.map((p) => [p.id, PJ_TYPES.indexOf(p.type), r2(p.x), r2(p.z), r2(p.y), r2(p.vx), r2(p.vz), p.zone ? 1 : 0]),
+    pj: G.proj.map((p) => [p.id, PJ_TYPES.indexOf(p.type), r2(p.x), r2(p.z), r2(p.y), r2(p.vx), r2(p.vz), p.delay > 0 ? 1 : 0, r2(p.life), r2(p.max)]),
+    qk: G.quake ? [r2(G.quake.t), r2(G.quake.a), G.quake.owner ? G.quake.owner.idx : -1] : null,
     fn: G.mode === 'BATTLE' ? [G.fence.gen, G.fence.R, G.fence.segs.map((g) => Math.round(g.hp))] : null,
     ra: G.mode === 'RACE' ? [r2(G.race.endAt)] : null
   });
@@ -4156,6 +4417,7 @@ function guestApplySnapshot(m) {
     c.stunT = a[22]; c.elimReason = ER_NAME[a[23]]; c.elimT = a[24]; c.wispSaved = !!a[25];
     c.item = a[26] >= 0 ? ITEM_IDS[a[26]] : null; c.roulette = a[27]; c.boostT = a[28]; c.shieldT = a[29]; c.giantT = a[30]; c.slowT = a[31]; c.spinoutT = a[32]; c.trapT = a[33];
     c.lap = a[34]; c.tIdx = a[35]; c.place = a[36]; c.finishT = a[37]; c.magnetT = a[38]; c.finished = !!a[39]; c.dnf = !!a[40]; c.wrongWay = !!a[41];
+    c.mirrorT = a[42]; c.freezeT = a[43]; c.rocketT = a[44]; c.ghostT = a[45]; c.flatT = a[46];
     if (wasAlive && !c.alive) { c.label.style.display = 'none'; c.model.root.visible = false; }
   });
   G.elimOrder = m.eo.map((i) => G.cars[i]);
@@ -4165,6 +4427,7 @@ function guestApplySnapshot(m) {
   syncProj(m.pj || []);
   if (m.fn) syncFence(m.fn);
   if (m.ra) G.race.endAt = m.ra[0];
+  G.quake = m.qk ? { t: m.qk[0], a: m.qk[1], owner: G.cars[m.qk[2]] } : null;
   (m.fx || []).forEach((e) => { const fn = NETFX[e[0]]; if (fn) { try { fn(...e[1]); } catch (_) {} } });
 
   // 내 차 기준 체감 효과 (게스트 화면 전용)
@@ -4203,11 +4466,10 @@ function guestApplySnapshot(m) {
 function syncProj(list) {
   const keep = new Set(list.map((p) => p[0]));
   for (let i = G.proj.length - 1; i >= 0; i--) if (!keep.has(G.proj[i].id)) { scene.remove(G.proj[i].mesh); G.proj.splice(i, 1); }
-  list.forEach(([id, ti, x, z, y, vx, vz, zone]) => {
+  list.forEach(([id, ti, x, z, y, vx, vz, dl, life, max]) => {
     let p = G.proj.find((q) => q.id === id);
-    if (!p) { const type = PJ_TYPES[ti]; p = { id, type, x, z, y, vx, vz, zone: !!zone, mesh: makeProjMesh(type) }; G.proj.push(p); }
-    p._rx = x; p._rz = z; p._ry = y; p.vx = vx; p.vz = vz; p.zone = !!zone;
-    if (p.zone) { p.x = x; p.z = z; p.y = y; }
+    if (!p) { const type = PJ_TYPES[ti]; p = { id, type, x, z, y, vx, vz, mesh: makeProjMesh(type) }; G.proj.push(p); }
+    p._rx = x; p._rz = z; p._ry = y; p.vx = vx; p.vz = vz; p.delay = dl ? 1 : 0; p.life = life; p.max = max;
   });
 }
 function syncFence(fn) {
